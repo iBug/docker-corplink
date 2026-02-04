@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /app/corplink-rs /config/config.json

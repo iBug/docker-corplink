@@ -1,0 +1,20 @@
+services:
+  corplink:
+    image: corplink
+    build: .
+    container_name: corplink
+    hostname: corplink
+    volumes:
+      - ${CONFIG_ROOT}:/config
+    networks:
+      default:
+        ipv4_address: ${IPV4_ADDRESS}
+    devices:
+      - /dev/net/tun
+    cap_add:
+      - CAP_NET_ADMIN
+
+networks:
+  default:
+    name: ${NETWORK_NAME}
+    external: true
