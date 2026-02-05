@@ -6,4 +6,7 @@ while ! [ -e "$CONFFILE" ]; do
 done
 
 cd /tmp
-exec /app/gost "$CONFFILE"
+rm -rf gost
+mkdir -p gost
+cd gost
+exec /app/gost -C "$CONFFILE"
